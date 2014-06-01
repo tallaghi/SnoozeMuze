@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">SnoozeMuze</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="picture">Picture</string>
+    <string name="previous_button">Previous</string>
+    <string name="next_button">Next</string>
+    <string name="play_button">Play</string>  
+    <string name="volume"> -\u0020\u0020\u0020\u0020\u0020Volume\u0020\u0020\u0020\u0020\u0020+ </string>  
+    <string name="credits">Credits</string>
+    <string name="credits_title">Credits and Citations</string>
+
+</resources>
