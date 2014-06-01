@@ -29,7 +29,7 @@ public class CreditsActivity extends Activity {
 				+ "Public Food Court by rivernile7 \n https://www.freesound.org/people/rivernile7/sounds/237685/ \n \n"
 				+ "birds forest lake atitlan guatemala arka by molicki \n https://www.freesound.org/people/molicki/sounds/237735/ \n \n"
 				+ "calm waves sandy coast 02 140429_0185 by klankbeeld \n https://www.freesound.org/people/klankbeeld/sounds/238061/ \n \n"
-				+ " I used WikiMedia Commons for the image assets, of which I will also cite individually below."
+				+ " I used WikiMedia Commons for the image assets, of which I will also cite individually below. \n \n"
 				+ " Muir Wood10 by Urban \n http://commons.wikimedia.org/wiki/Forest#mediaviewer/File:Muir_Wood10.JPG \n \n"
 				+ "Here comes rain again by Juni \n http://commons.wikimedia.org/wiki/Rain#mediaviewer/File:Here_comes_rain_again.jpg \n \n"
 				+ "Gentle waves come in at a sandy beach by Johntex \n http://commons.wikimedia.org/wiki/Waves#mediaviewer/File:Gentle_waves_come_in_at_a_sandy_beach.JPG \n \n"
