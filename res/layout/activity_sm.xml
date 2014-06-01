@@ -18,7 +18,7 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:padding="10dp"
-            android:background="@drawable/myButton"
+            android:background="@drawable/mybutton"
             android:text="@string/credits"
             android:typeface="serif" />
 
@@ -93,12 +93,13 @@
         
     </LinearLayout>
     
-    <TextView
+    <!-- <TextView
         android:id="@+id/sound_description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/hello_world"
-        android:typeface="serif"/>
+        android:typeface="serif"/>-->
+        
 	</LinearLayout>
 </LinearLayout>
 

@@ -6,21 +6,8 @@
     android:background="@drawable/gradient"
      >
     
-    
-  
-
-        <TextView
-            android:id="@+id/credits_para_1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true"
-            android:padding="10dp"
-            android:textColor="#FFFFFF" 
-            android:typeface="serif"/>
-
-        <TextView
-            android:id="@+id/textView1"
+    <TextView
+            android:id="@+id/creditsTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
@@ -30,5 +17,19 @@
             android:textSize="20sp"
             android:text="@string/credits_title"
             android:typeface="serif" />
+  
+
+        <TextView
+            android:id="@+id/credits_para_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/creditsTitle"
+            android:padding="10dp"
+            android:textColor="#FFFFFF" 
+            android:typeface="serif"/>
+
+        
 
 </RelativeLayout>
