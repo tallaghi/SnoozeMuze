@@ -27,3 +27,5 @@ proguard/
 *.log
 
 project.properties
+*.properties
+project.properties
