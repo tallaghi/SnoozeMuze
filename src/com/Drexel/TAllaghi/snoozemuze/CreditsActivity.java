@@ -6,15 +6,19 @@ import android.widget.TextView;
 
 public class CreditsActivity extends Activity {
 
+	//Initializing variables for global use
 	private TextView mCreditsParaOne;
 	private String creditsParaOne;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_credits);
 		
+		//Defining the textview by the xml defined id so it can be set below.
 		mCreditsParaOne=(TextView)findViewById(R.id.credits_para_1);
 		
+		//The credits text that will be displayed in the layout.
 		creditsParaOne="I would like to credit the numerous websites"
 				+ " that have helped me create this app as well as"
 				+ " give credit to the websites where I recieved the"
@@ -36,7 +40,8 @@ public class CreditsActivity extends Activity {
 				+ "White Rose food court by Mtaylor848 \n http://commons.wikimedia.org/wiki/File:White_Rose_food_court.jpg \n \n";
 				
 
-
+		//The text in creditsParaOne is now set in the space defined
+		// in mCreditsParaOne.
 		mCreditsParaOne.setText(creditsParaOne);
 		
 	}
