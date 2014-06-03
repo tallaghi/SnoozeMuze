@@ -1,6 +1,7 @@
 package com.Drexel.TAllaghi.snoozemuze;
 
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.media.AudioManager;
@@ -16,7 +17,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.SeekBar;
 
-public class SMActivity extends ActionBarActivity {
+public class SMActivity extends Activity {
 
 	private ImageButton mNextButton;
 	private ImageButton mPreviousButton;
