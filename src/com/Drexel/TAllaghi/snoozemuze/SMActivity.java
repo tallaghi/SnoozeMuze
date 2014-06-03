@@ -19,6 +19,7 @@ import android.widget.SeekBar;
 
 public class SMActivity extends Activity {
 
+	//Initializing buttons, seekbar, and etc for global use
 	private ImageButton mNextButton;
 	private ImageButton mPreviousButton;
 	private ImageButton mPlayButton;
@@ -32,6 +33,8 @@ public class SMActivity extends Activity {
 	private static final String TAG="SMActivity";
 	private static int SoundRID;
 	
+	//Initializing Picture Sound object array to house the pointers
+	// of the sound and picture assets, Picture Sound object array.
 	private Picture_Sound[] storage= new Picture_Sound[]{
 		new Picture_Sound(R.drawable.forest_resized_2,R.raw.forest_and_birds_mpthree),
 		new Picture_Sound(R.drawable.rain_resized,R.raw.rain_and_thunder_mpthree),
@@ -39,6 +42,8 @@ public class SMActivity extends Activity {
 		new Picture_Sound(R.drawable.beach_resized,R.raw.beach_mpthree)
 	};
 	
+	//Method that updates the picture with the current picture from the 
+	// drawable file.
 	private void updatePicture(){
 		int pic=storage[mCurrentIndex].getPRID();
         try{
@@ -49,6 +54,8 @@ public class SMActivity extends Activity {
         }
 	}
 	
+	//Method that updates the sound asset with the current sound pointer
+	// that is stored in the Picture Sound object array.
 	private void updateSound(){
 		try{
 			SoundRID=storage[mCurrentIndex].getSRID();
@@ -61,26 +68,38 @@ public class SMActivity extends Activity {
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+        
+    	//Calls standard onCreate method.  	
+    	super.onCreate(savedInstanceState);
+    	
+    	//Sets the layout to the activity_sm xml file.
         setContentView(R.layout.activity_sm);
         
+        //Sets the current index to 0, so the first picture shows
+        // up when onCreate is called.
         mCurrentIndex=0;
-        //updatePicture();
         
+        
+        //Ties the buttons and image buttons to the id's
+        // that the xml defines.
         mNextButton=(ImageButton)findViewById(R.id.next_button);
         mPreviousButton=(ImageButton)findViewById(R.id.previous_button);
         mPlayButton=(ImageButton)findViewById(R.id.play_button);
         mPicture=(ImageButton)findViewById(R.id.sound_picture);
         mCredits=(Button)findViewById(R.id.toCredits);
-        mAudioManager = (AudioManager)getSystemService(Context.AUDIO_SERVICE);
         
+        //Initializing variables for the volume slider integration
+        mAudioManager = (AudioManager)getSystemService(Context.AUDIO_SERVICE);
         int maxVolume = mAudioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
         int curVolume = mAudioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
         mVolSlider = (SeekBar)findViewById(R.id.volumeSlider);
         
+        //Setting max volume of the slider to the max volume, and the
+        // progress to the current volume.
         mVolSlider.setMax(maxVolume);
         mVolSlider.setProgress(curVolume);
         
+        //Adding a listener to the volume slider
         mVolSlider.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onStopTrackingTouch(SeekBar arg0) {
@@ -89,7 +108,8 @@ public class SMActivity extends Activity {
             @Override
             public void onStartTrackingTouch(SeekBar arg0) {
             }
-
+            
+            //Setting volume on the device to the position set on the slider 
             @Override
             public void onProgressChanged(SeekBar arg0, int arg1, boolean arg2) {
                 mAudioManager.setStreamVolume(AudioManager.STREAM_MUSIC, arg1, 0);
