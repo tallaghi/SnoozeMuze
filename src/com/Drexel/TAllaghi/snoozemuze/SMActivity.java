@@ -116,6 +116,12 @@ public class SMActivity extends Activity {
             }
         });
         
+        //Giving the mPicture ImageButton a clicklistener which resets the
+        // global mediaplayer, creates a new mediaplayer with the id tag
+        // that is was defined in the update sound method. Once the media
+        // player is created it is started and looped. If it is already 
+        // playing when the button is pressed, the mediaplayer is stopped
+        // and looping is set to false.
         mPicture.setOnClickListener(new OnClickListener(){
 
 			@Override
@@ -134,6 +140,12 @@ public class SMActivity extends Activity {
         	
         });
         
+        //Giving the mPlayButton ImageButton a clicklistener which resets the
+        // global mediaplayer, creates a new mediaplayer with the id tag
+        // that is was defined in the update sound method. Once the media
+        // player is created it is started and looped. If it is already 
+        // playing when the button is pressed, the mediaplayer is stopped
+        // and looping is set to false.
         mPlayButton.setOnClickListener(new OnClickListener(){
 
 			@Override
@@ -152,6 +164,12 @@ public class SMActivity extends Activity {
         	
         });
         
+        //Giving the mNextButton ImageButton a clicklistener which sets
+        // the mediaplayer is stopped and looping is set to false. Then
+        // increments or resets the current index, depending on what the
+        // index is currently. After hte index is properly set the 
+        // update picture and update sound method are called to
+        // update the drawable id's.
         mNextButton.setOnClickListener(new OnClickListener(){
 
 			@Override
@@ -167,6 +185,13 @@ public class SMActivity extends Activity {
 			}
         	
         });
+        
+        //Giving the mPreviousButton ImageButton a clicklistener which sets
+        // the mediaplayer is stopped and looping is set to false. Then
+        // increments or resets the current index, depending on what the
+        // index is currently. After hte index is properly set the 
+        // update picture and update sound method are called to
+        // update the drawable id's.
         mPreviousButton.setOnClickListener(new OnClickListener(){
         	
         	@Override
@@ -182,6 +207,11 @@ public class SMActivity extends Activity {
         		updateSound();
         	}
         });
+        
+        //Giving the mCredits button a clicklistener. Once the 
+        // mCredits button is clicked a new intent is created 
+        // and a new activity started in the CreditsActivity class
+        // therefore showing another screen.
         mCredits.setOnClickListener(new OnClickListener(){
 
 			@Override
@@ -193,44 +223,59 @@ public class SMActivity extends Activity {
         	
         });
         
+        //SaveInstanceState recovery if statement. This will recover the
+        // mCurrentIndex variable when onCreate is called again, for instance
+        // this will save the current sound and picture if the orientation is
+        // rotated from portrait to landscape.
         if(savedInstanceState!=null){
         	mCurrentIndex=savedInstanceState.getInt(KEY_INDEX,0);
         }
+        
+        //The first update picture and update sound, purposely placed after
+        // the saveInstanceState if statement, therefore the mCurrentIndex
+        // can be used from that if.
         updatePicture();
         updateSound();
         
     }
     
+    //This method saves the current index variable when the onCreate is 
+    // recalled, used here for screen rotation.
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState){
     	super.onSaveInstanceState(savedInstanceState);
-    	//Log.i(TAG, "onSaveInstanceState");
     	savedInstanceState.putInt(KEY_INDEX,mCurrentIndex);
     }
+    
+    //Overriden onStart for debugging.
     @Override
     public void onStart(){
     	super.onStart();
     	Log.d(TAG,"onStart() called");
     }
     
+    //Overriden onPause for debugging.
     @Override
     public void onPause(){
     	super.onPause();
     	Log.d(TAG,"onPause() called");
     }
     
+    //Overriden onResume for debugging.
     @Override
     public void onResume(){
     	super.onResume();
     	Log.d(TAG,"onResume() called");
     }
     
+    //Overriden onStop for debugging.
     @Override
     public void onStop(){
     	super.onStop();
     	Log.d(TAG,"onStop() called");
     }
     
+    //Overriden onDestroy for debugging.
     @Override
     public void onDestroy(){
     	super.onDestroy();
