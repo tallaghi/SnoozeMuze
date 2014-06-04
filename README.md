@@ -25,8 +25,11 @@ which the noise is outputted at.
 to the sources that I used to help create this project. The
 sound should loop while in this menu as well.
 
-	There shouldn't be any problems compiling this, I have 
-extended Activity therefore no external librarys should be necessary.
+	There shouldn't be any problems compiling this, if there is
+check the preferences of the app by going to file preferences, and then
+while in there click on the android tab. While in there make sure that 
+the program is compiling with android 4.4.2, and that is using the 
+android-support-v7-appcompat library that can be found in the android-sdk.
 Note I have only tested this with API level 19 devices, but lint does
 not give me any warnings saying that it will not on lower devices.
 
